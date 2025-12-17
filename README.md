@@ -68,7 +68,6 @@ O projeto utiliza uma arquitetura baseada em componentes com:
 ## 🌟 Funcionalidades
 
 - Design responsivo
-- Tema claro/escuro
 - Componentes acessíveis
 - Performance otimizada
 - SEO friendly

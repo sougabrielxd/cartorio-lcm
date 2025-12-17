@@ -3,7 +3,7 @@ import { Phone, Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
 
 export default function AttendanceChannelsDetailPage() {
   return (
-    <section className="w-full py-24 bg-background">
+    <section id='contato' className="w-full py-24 bg-background ">
       <div className="container mx-auto px-4">
         {/* Título */}
         <h2
