@@ -24,7 +24,7 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#inicio" style={{ fontFamily: 'Source Sans Pro, sans-serif' }} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="/" style={{ fontFamily: 'Source Sans Pro, sans-serif' }} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Início
           </a>
 
@@ -64,15 +64,15 @@ export default function Header() {
               </svg>
             </button>
             <div className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <a href="#" className="block px-4 py-2 text-sm text-foreground hover:bg-primary hover:text-white transition-colors">
+              <a href="/" className="block px-4 py-2 text-sm text-foreground hover:bg-primary hover:text-white transition-colors">
                 Cartório Digital
               </a>
             </div>
         </div>
-          <a href="#links" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="/links" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
           Links Úteis
           </a>
-          <a href="#LGPD" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="/LGPD" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
           LGPD
           </a>
           <a href="#contato" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
