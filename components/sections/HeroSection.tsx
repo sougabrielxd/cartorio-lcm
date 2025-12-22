@@ -4,12 +4,14 @@ interface HeroSectionProps {
   title: string;
   subtitle: string;
   backgroundImageUrl?: string;
+  badge?: string;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   backgroundImageUrl,
+  badge,
 }) => {
   return (
     <section className="relative w-full h-80 md:h-96 overflow-hidden flex items-center justify-center text-white">
@@ -36,9 +38,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Conteúdo */}
       <div className="relative z-10 container mx-auto px-4 flex items-center justify-center h-full">
         <div className="text-center max-w-2xl">
-          <p className="text-sm uppercase tracking-widest font-semibold opacity-80 mb-2">
-            Links
-          </p>
+          {badge && (
+            <p className="text-sm uppercase tracking-widest font-semibold opacity-80 mb-2">
+              {badge}
+            </p>
+          )}
 
           <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
             {title}

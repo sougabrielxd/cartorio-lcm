@@ -1,9 +1,12 @@
+'use client'
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from '@/components/ui/image';
 
 
 export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
@@ -72,10 +75,14 @@ export default function Header() {
           <a href="/links" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
           Links Úteis
           </a>
-          <a href="/LGPD" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="/lgpd" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
           LGPD
           </a>
-          <a href="#contato" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a 
+            href={pathname === '/' ? '#contato' : '/#contato'} 
+            style={{ fontFamily: "Source Sans Pro, sans-serif" }} 
+            className=" text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
             Contato
           </a>
         </nav>
