@@ -1,4 +1,5 @@
-import { Phone, MessageCircle, Mail, AlertCircle, Loader } from 'lucide-react';
+import { Phone, Mail, AlertCircle, Loader } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 
 export default function ProcessTrackingPage() {
@@ -79,7 +80,7 @@ export default function ProcessTrackingPage() {
                 rel="noopener noreferrer"
                 className="px-6 py-2 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4" /> WhatsApp
+                <FaWhatsapp className="w-4 h-4" /> WhatsApp
               </a>
               <a
                 href="mailto:cartorio1officiopi@hotmail.com"

@@ -1,4 +1,5 @@
-import { Phone, Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 
 export default function AttendanceChannelsDetailPage() {
@@ -81,7 +82,7 @@ export default function AttendanceChannelsDetailPage() {
           {/* WhatsApp */}
           <div className="bg-white border border-border rounded-lg p-6 sm:p-8">
             <div className="mb-4">
-              <MessageCircle className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+              <FaWhatsapp className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
             </div>
             <h3
               style={{ fontFamily: "Montserrat, sans-serif" }}
