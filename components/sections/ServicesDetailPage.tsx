@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { X, FileText, Home, Users, Building2, FileStack, AlertCircle } from 'lucide-react';
 
 
@@ -134,63 +134,99 @@ export default function ServicesDetailPage() {
 
       {/* Modal */}
       {selectedService && (
-        <div className="fixed inset-0 bg-black/50 z-40 flex items-center justify-center p-4" onClick={() => setSelectedService(null)}>
-          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200" 
+          onClick={() => setSelectedService(null)}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300" 
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Header */}
-            <div className="sticky top-0 bg-primary text-primary-foreground p-4 sm:p-6 flex items-center justify-between">
-              <div className="flex-1 min-w-0">
-                <div className="mb-2">{selectedService.icon}</div>
-                <h3
-                  style={{ fontFamily: "Montserrat, sans-serif" }}
-                  className="font-bold text-lg sm:text-xl pr-2"
+            <div className="bg-primary text-primary-foreground p-6 sm:p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start gap-4 flex-1 min-w-0">
+                  <div className="bg-primary-foreground/20 p-3 rounded-xl flex-shrink-0 text-primary-foreground">
+                    {React.cloneElement(selectedService.icon as React.ReactElement, { 
+                      className: "w-12 h-12 text-primary-foreground" 
+                    })}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                      className="font-bold text-xl sm:text-2xl mb-2"
+                    >
+                      {selectedService.title}
+                    </h3>
+                    <p
+                      style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                      className="text-primary-foreground/90 text-sm sm:text-base"
+                    >
+                      {selectedService.description}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="text-primary-foreground hover:bg-primary-foreground/20 active:bg-primary-foreground/30 p-2 rounded-lg transition-all duration-200 flex-shrink-0 border border-primary-foreground/20 hover:border-primary-foreground/40"
+                  aria-label="Fechar modal"
                 >
-                  {selectedService.title}
-                </h3>
+                  <X className="w-5 h-5" strokeWidth={2.5} />
+                </button>
               </div>
-              <button
-                onClick={() => setSelectedService(null)}
-                className="text-white hover:bg-white/20 p-2 rounded transition-colors flex-shrink-0"
-                aria-label="Fechar modal"
-              >
-                <X size={24} />
-              </button>
             </div>
 
             {/* Conteúdo */}
-            <div className="p-4 sm:p-6">
-              <p
-                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-                className="text-foreground mb-6"
-              >
-                {selectedService.description}
-              </p>
+            <div className="p-6 sm:p-8 overflow-y-auto max-h-[calc(90vh-180px)]">
+              <div className="mb-6">
+                <h4
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                  className="font-bold text-lg text-primary mb-4 flex items-center gap-2"
+                >
+                  <span className="w-1 h-6 bg-primary rounded-full"></span>
+                  Serviços Incluídos
+                </h4>
+              </div>
 
-              <h4
-                style={{ fontFamily: "Montserrat, sans-serif" }}
-                className="font-bold text-primary mb-4"
-              >
-                Detalhes:
-              </h4>
-
-              <ul
-                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-                className="space-y-2"
-              >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {selectedService.details.map((detail, index) => (
-                  <li key={index} className="flex items-start gap-3 text-sm text-foreground">
-                    <span className="text-primary font-bold mt-1">•</span>
-                    <span>{detail}</span>
-                  </li>
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 p-3 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
+                  >
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span
+                      style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                      className="text-sm sm:text-base text-foreground flex-1"
+                    >
+                      {detail}
+                    </span>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
-              {/* Botão de ação */}
-              <button
-                onClick={() => setSelectedService(null)}
-                className="w-full mt-6 px-4 py-2 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                Solicitar Informações
-              </button>
+              {/* Botões de ação */}
+              <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
+                <a
+                  href="#contato"
+                  onClick={() => setSelectedService(null)}
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                  className="flex-1 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-200 text-center shadow-md hover:shadow-lg"
+                >
+                  Solicitar Informações
+                </a>
+                <button
+                  onClick={() => setSelectedService(null)}
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                  className="px-6 py-3 border-2 border-gray-300 text-foreground font-semibold rounded-lg hover:border-primary hover:text-primary transition-all duration-200"
+                >
+                  Fechar
+                </button>
+              </div>
             </div>
           </div>
         </div>
