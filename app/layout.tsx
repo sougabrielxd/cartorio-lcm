@@ -15,10 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Cartório Luciana Carrilho de Moraes Marinho",
   description: "Cartório do 1º Ofício de Alto Longá/PI. Serviços cartorários com excelência e segurança jurídica.",
-  icons: {
-    icon: '/images/logo-lcm.svg',
-    apple: '/images/logo-lcm.svg',
-  },
 };
 
 export default function RootLayout({

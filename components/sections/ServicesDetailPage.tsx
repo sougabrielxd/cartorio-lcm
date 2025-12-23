@@ -146,10 +146,8 @@ export default function ServicesDetailPage() {
             <div className="bg-primary text-primary-foreground p-6 sm:p-8">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-start gap-4 flex-1 min-w-0">
-                  <div className="bg-primary-foreground/20 p-3 rounded-xl flex-shrink-0 text-primary-foreground">
-                    {React.cloneElement(selectedService.icon as React.ReactElement, { 
-                      className: "w-12 h-12 text-primary-foreground" 
-                    })}
+                  <div className="bg-primary-foreground/20 p-3 rounded-xl flex-shrink-0 text-primary-foreground [&_svg]:w-12 [&_svg]:h-12 [&_svg]:text-primary-foreground">
+                    {selectedService.icon}
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3
