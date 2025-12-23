@@ -5,17 +5,6 @@ const ServicesContentSection: React.FC = () => {
   return (
     <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-4xl">
-        {/* Título Principal */}
-        <div className="mb-12 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            Nossos Serviços
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            Excelência e segurança jurídica em todos os serviços cartorários
-          </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-4"></div>
-        </div>
-
         {/* Tabelionato de Notas */}
         <div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">

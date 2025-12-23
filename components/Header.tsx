@@ -116,18 +116,18 @@ export default function Header() {
         }`}
       >
         {/* Header do Menu */}
-        <div className="bg-gradient-to-r from-primary via-primary to-primary/95 text-white px-6 py-5 flex items-center justify-between shadow-lg">
+        <div className="bg-primary text-primary-foreground px-6 py-5 flex items-center justify-between shadow-lg">
           <div className="flex items-center">
-            <span style={{ fontFamily: "Montserrat, sans-serif" }} className="font-bold text-xl text-white">
+            <span style={{ fontFamily: "Montserrat, sans-serif" }} className="font-bold text-xl text-primary-foreground">
               Menu
             </span>
           </div>
           <button
             onClick={closeMobileMenu}
-            className="p-2 hover:bg-white/25 active:bg-white/30 rounded-lg transition-all duration-200 border border-white/20 hover:border-white/40"
+            className="p-2 hover:bg-primary-foreground/25 active:bg-primary-foreground/30 rounded-lg transition-all duration-200 border border-primary-foreground/20 hover:border-primary-foreground/40"
             aria-label="Fechar menu"
           >
-            <X className="w-6 h-6 text-white" strokeWidth={3} />
+            <X className="w-6 h-6 text-primary-foreground" strokeWidth={3} />
           </button>
         </div>
 
@@ -143,24 +143,24 @@ export default function Header() {
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                 className={`group relative flex items-center gap-4 px-6 py-4 mx-3 mb-1 rounded-xl transition-all duration-200 ${
                   item.isActive
-                    ? 'bg-primary text-white shadow-md'
+                    ? 'bg-primary text-primary-foreground shadow-md'
                     : 'text-foreground hover:bg-primary/5 hover:text-primary'
                 }`}
               >
                 <div className={`flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-200 shrink-0 ${
                   item.isActive
-                    ? 'bg-white/20 text-white'
+                    ? 'bg-primary-foreground/20 text-primary-foreground'
                     : 'bg-primary/10 text-primary group-hover:bg-primary/20'
                 }`}>
                   <Icon className="w-5 h-5" strokeWidth={2} />
                 </div>
-                <span className={`font-semibold text-base flex-1 ${item.isActive ? 'text-white' : ''}`}>
+                <span className={`font-semibold text-base flex-1 ${item.isActive ? 'text-primary-foreground' : ''}`}>
                   {item.label}
                 </span>
                 <svg
                   className={`w-5 h-5 transition-transform duration-200 shrink-0 ${
                     item.isActive 
-                      ? 'text-white' 
+                      ? 'text-primary-foreground' 
                       : 'text-foreground/30 group-hover:text-primary group-hover:translate-x-1'
                   }`}
                   fill="none"
@@ -170,7 +170,7 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
                 {item.isActive && (
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-10 bg-white rounded-r-full"></div>
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-10 bg-primary-foreground rounded-r-full"></div>
                 )}
               </a>
             );

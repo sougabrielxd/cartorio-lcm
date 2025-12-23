@@ -5,13 +5,6 @@ const LgpdContentSection: React.FC = () => {
   return (
     <section className="py-8 sm:py-12 md:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-        {/* Título Principal */}
-        <div className="mb-8 sm:mb-10 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-6 sm:mb-8">
-            LGPD
-          </h1>
-        </div>
-
         {/* Nosso Compromisso com a Proteção de Dados */}
         <div className="mb-8 sm:mb-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-6 border-b pb-2 border-gray-200 dark:border-gray-700">
