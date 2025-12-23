@@ -3,26 +3,26 @@ import { Phone, Mail, MessageCircle, MapPin, Clock } from 'lucide-react';
 
 export default function AttendanceChannelsDetailPage() {
   return (
-    <section id='contato' className="w-full py-24 bg-background ">
-      <div className="container mx-auto px-4">
+    <section id='contato' className="w-full py-12 sm:py-16 md:py-24 bg-background ">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Título */}
         <h2
           style={{ fontFamily: "Montserrat, sans-serif" }}
-          className="font-bold text-3xl text-primary text-center mb-16"
+          className="font-bold text-2xl sm:text-3xl text-primary text-center mb-8 sm:mb-12 md:mb-16"
         >
           Canais de Atendimento
         </h2>
 
         {/* Grid de Canais */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {/* Telefone */}
-          <div className="bg-white border border-border rounded-lg p-8">
+          <div className="bg-white border border-border rounded-lg p-6 sm:p-8">
             <div className="mb-4">
-              <Phone className="w-10 h-10 text-primary" />
+              <Phone className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
             </div>
             <h3
               style={{ fontFamily: "Montserrat, sans-serif" }}
-              className="font-bold text-xl text-primary mb-4"
+              className="font-bold text-lg sm:text-xl text-primary mb-4"
             >
               Telefone
             </h3>
@@ -46,13 +46,13 @@ export default function AttendanceChannelsDetailPage() {
           </div>
 
           {/* Email */}
-          <div className="bg-white border border-border rounded-lg p-8">
+          <div className="bg-white border border-border rounded-lg p-6 sm:p-8">
             <div className="mb-4">
-              <Mail className="w-10 h-10 text-primary" />
+              <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
             </div>
             <h3
               style={{ fontFamily: "Montserrat, sans-serif" }}
-              className="font-bold text-xl text-primary mb-4"
+              className="font-bold text-lg sm:text-xl text-primary mb-4"
             >
               Email
             </h3>
@@ -79,13 +79,13 @@ export default function AttendanceChannelsDetailPage() {
           </div>
 
           {/* WhatsApp */}
-          <div className="bg-white border border-border rounded-lg p-8">
+          <div className="bg-white border border-border rounded-lg p-6 sm:p-8">
             <div className="mb-4">
-              <MessageCircle className="w-10 h-10 text-primary" />
+              <MessageCircle className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
             </div>
             <h3
               style={{ fontFamily: "Montserrat, sans-serif" }}
-              className="font-bold text-xl text-primary mb-4"
+              className="font-bold text-lg sm:text-xl text-primary mb-4"
             >
               WhatsApp
             </h3>
@@ -115,15 +115,15 @@ export default function AttendanceChannelsDetailPage() {
         </div>
 
         {/* Endereço Físico */}
-        <div className="bg-white border border-border rounded-lg p-8 mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-white border border-border rounded-lg p-6 sm:p-8 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Informações */}
             <div>
               <h3
                 style={{ fontFamily: "Montserrat, sans-serif" }}
-                className="font-bold text-2xl text-primary mb-6 flex items-center gap-2"
+                className="font-bold text-xl sm:text-2xl text-primary mb-4 sm:mb-6 flex items-center gap-2"
               >
-                <MapPin className="w-6 h-6" />
+                <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                 Endereço Físico
               </h3>
               <div
@@ -149,9 +149,9 @@ export default function AttendanceChannelsDetailPage() {
             <div>
               <h3
                 style={{ fontFamily: "Montserrat, sans-serif" }}
-                className="font-bold text-2xl text-primary mb-6 flex items-center gap-2"
+                className="font-bold text-xl sm:text-2xl text-primary mb-4 sm:mb-6 flex items-center gap-2"
               >
-                <Clock className="w-6 h-6" />
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
                 Horário de Funcionamento
               </h3>
               <div
@@ -182,7 +182,8 @@ export default function AttendanceChannelsDetailPage() {
             title="Localização do Cartório"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.6789!2d-41.2!3d-4.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzAnMDAuMCJTIDQxwrAxMicwMC4wIlc!5e0!3m2!1spt-BR!2sbr!4v1234567890"
             width="100%"
-            height="400"
+            height="300"
+            className="h-[300px] sm:h-[400px]"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"

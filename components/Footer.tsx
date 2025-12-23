@@ -8,16 +8,16 @@ import FooterBottom from '@/components/footer/FooterBottom';
 export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Grid de 3 colunas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-8">
           {/* Coluna 1 - Logo */}
           <div className="flex items-center justify-center md:justify-start">
             <FooterLogo />
           </div>
 
           {/* Coluna 2 - Navigation e Contato (empilhados) */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <FooterNavigation />
             <FooterContact />
           </div>

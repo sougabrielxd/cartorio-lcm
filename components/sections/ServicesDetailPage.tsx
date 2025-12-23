@@ -95,28 +95,28 @@ export default function ServicesDetailPage() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   return (
-    <section className="w-full py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="w-full py-12 sm:py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Título */}
         <h2
           style={{ fontFamily: "Montserrat, sans-serif" }}
-          className="font-bold text-3xl text-primary text-center mb-16"
+          className="font-bold text-2xl sm:text-3xl text-primary text-center mb-8 sm:mb-12 md:mb-16"
         >
           Nossos Serviços
         </h2>
 
         {/* Grid de Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service) => (
             <button
               key={service.id}
               onClick={() => setSelectedService(service)}
-              className="bg-white border border-border rounded-lg p-8 text-left hover:shadow-lg hover:border-primary transition-all duration-300 cursor-pointer"
+              className="bg-white border border-border rounded-lg p-6 sm:p-8 text-left hover:shadow-lg hover:border-primary transition-all duration-300 cursor-pointer"
             >
               <div className="mb-4">{service.icon}</div>
               <h3
                 style={{ fontFamily: "Montserrat, sans-serif" }}
-                className="font-bold text-lg text-primary mb-2"
+                className="font-bold text-base sm:text-lg text-primary mb-2"
               >
                 {service.title}
               </h3>
@@ -134,22 +134,22 @@ export default function ServicesDetailPage() {
 
       {/* Modal */}
       {selectedService && (
-        <div className="fixed inset-0 bg-black/50 z-40 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-md w-full max-h-96 overflow-y-auto">
+        <div className="fixed inset-0 bg-black/50 z-40 flex items-center justify-center p-4" onClick={() => setSelectedService(null)}>
+          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
-            <div className="sticky top-0 bg-primary text-primary-foreground p-6 flex items-center justify-between">
-              <div>
+            <div className="sticky top-0 bg-primary text-primary-foreground p-4 sm:p-6 flex items-center justify-between">
+              <div className="flex-1 min-w-0">
                 <div className="mb-2">{selectedService.icon}</div>
                 <h3
                   style={{ fontFamily: "Montserrat, sans-serif" }}
-                  className="font-bold text-xl"
+                  className="font-bold text-lg sm:text-xl pr-2"
                 >
                   {selectedService.title}
                 </h3>
               </div>
               <button
                 onClick={() => setSelectedService(null)}
-                className="text-white hover:bg-white/20 p-2 rounded transition-colors"
+                className="text-white hover:bg-white/20 p-2 rounded transition-colors flex-shrink-0"
                 aria-label="Fechar modal"
               >
                 <X size={24} />
@@ -157,7 +157,7 @@ export default function ServicesDetailPage() {
             </div>
 
             {/* Conteúdo */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                 className="text-foreground mb-6"

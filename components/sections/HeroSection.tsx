@@ -14,7 +14,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   badge,
 }) => {
   return (
-    <section className="relative w-full h-80 md:h-96 overflow-hidden flex items-center justify-center text-white">
+    <section className="relative w-full min-h-[60vh] md:h-96 overflow-hidden flex items-center justify-center text-white pt-16 md:pt-0">
       
       {/* Background */}
       {backgroundImageUrl ? (
@@ -36,19 +36,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Conteúdo */}
-      <div className="relative z-10 container mx-auto px-4 flex items-center justify-center h-full">
+      <div className="relative z-10 container mx-auto px-4 py-8 md:py-0 flex items-center justify-center min-h-[60vh] md:h-full">
         <div className="text-center max-w-2xl">
           {badge && (
-            <p className="text-sm uppercase tracking-widest font-semibold opacity-80 mb-2">
+            <p className="text-xs sm:text-sm uppercase tracking-widest font-semibold opacity-80 mb-2">
               {badge}
             </p>
           )}
 
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight">
             {title}
           </h1>
 
-          <p className="text-lg md:text-xl mt-3 opacity-90">
+          <p className="text-base sm:text-lg md:text-xl mt-3 opacity-90 px-2">
             {subtitle}
           </p>
         </div>
