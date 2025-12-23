@@ -63,22 +63,58 @@ export default function Header() {
 
         {/* Navigation Desktop */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="/" style={{ fontFamily: 'Source Sans Pro, sans-serif' }} className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a 
+            href="/" 
+            style={{ fontFamily: 'Source Sans Pro, sans-serif' }} 
+            className={`text-sm font-medium hover:text-primary transition-colors relative pb-1 ${
+              pathname === '/' ? 'text-primary' : 'text-foreground'
+            }`}
+          >
             Início
+            {pathname === '/' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+            )}
           </a>
-          <a href="/nossos-servicos" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a 
+            href="/nossos-servicos" 
+            style={{ fontFamily: "Source Sans Pro, sans-serif" }} 
+            className={`text-sm font-medium hover:text-primary transition-colors relative pb-1 ${
+              pathname === '/nossos-servicos' ? 'text-primary' : 'text-foreground'
+            }`}
+          >
             Nossos Serviços
+            {pathname === '/nossos-servicos' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+            )}
           </a>
-          <a href="/links" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
-          Links Úteis
+          <a 
+            href="/links" 
+            style={{ fontFamily: "Source Sans Pro, sans-serif" }} 
+            className={`text-sm font-medium hover:text-primary transition-colors relative pb-1 ${
+              pathname === '/links' ? 'text-primary' : 'text-foreground'
+            }`}
+          >
+            Links Úteis
+            {pathname === '/links' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+            )}
           </a>
-          <a href="/lgpd" style={{ fontFamily: "Source Sans Pro, sans-serif" }} className=" text-sm font-medium text-foreground hover:text-primary transition-colors">
-          LGPD
+          <a 
+            href="/lgpd" 
+            style={{ fontFamily: "Source Sans Pro, sans-serif" }} 
+            className={`text-sm font-medium hover:text-primary transition-colors relative pb-1 ${
+              pathname === '/lgpd' ? 'text-primary' : 'text-foreground'
+            }`}
+          >
+            LGPD
+            {pathname === '/lgpd' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+            )}
           </a>
           <a 
             href={pathname === '/' ? '#contato' : '/#contato'} 
             style={{ fontFamily: "Source Sans Pro, sans-serif" }} 
-            className=" text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors relative pb-1"
           >
             Contato
           </a>
