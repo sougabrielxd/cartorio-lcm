@@ -33,21 +33,37 @@ const LinksContentSection: React.FC = () => {
 
         {/* Lista vertical de links externos (Estrutura semântica ul, li, a) */}
         <ul className="space-y-4">
-          {placeholderLinks.map((link) => (
-            <li key={link.id} className="text-lg">
-              {/* Link preparado para abrir em nova aba */}
-              <a 
-                href={link.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition duration-150 ease-in-out font-medium hover:underline"
-              >
-                {link.name}
-                {/* Ícone de link externo (opcional, mas bom para UX) */}
-                <svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </a>
-            </li>
-          ))}
+          {placeholderLinks.map((link) => {
+            // Links que devem ter cor cinza
+            const grayLinks = [
+              'ANOREG/BR – Associação dos Notários e Registradores do Brasil',
+              'ARPEN/BR – Associação dos Registradores de Pessoas Naturais',
+              'Câmara dos Deputados',
+              'CDT- Centro de Estudos e Distribuição de Títulos e Documentos'
+            ];
+            
+            const isGrayLink = grayLinks.includes(link.name);
+            
+            return (
+              <li key={link.id} className="text-lg">
+                {/* Link preparado para abrir em nova aba */}
+                <a 
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={`transition duration-150 ease-in-out font-medium hover:underline ${
+                    isGrayLink 
+                      ? 'text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300' 
+                      : 'text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300'
+                  }`}
+                >
+                  {link.name}
+                  {/* Ícone de link externo (opcional, mas bom para UX) */}
+                  <svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
